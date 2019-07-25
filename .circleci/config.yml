@@ -14,13 +14,13 @@ jobs:
                 key: yarn-v1-{{ checksum "yarn.lock" }}-{{ arch }}
             - restore_cache:
                 key: node-v1-{{ checksum "package.json" }}-{{ arch }}
-            - run: yarn install
+            - run: npm install
             - run:
                 name: lint
                 command: |
-                    yarn lint
+                    npm run lint
             - save_cache:
-                key: yarn-v1-{{ checksum "yarn.lock" }}-{{ arch }}
+                key: npm-v1-{{ checksum "package-lock.lock" }}-{{ arch }}
                 paths:
                     - ~/.cache/yarn
             - save_cache:
@@ -31,7 +31,7 @@ jobs:
                 name: test
                 command: |
                     mkdir -p test-results/jest
-                    yarn test
+                    npm run test
                 environment:
                     JEST_JUNIT_OUTPUT: test-results/jest/junit.xml
             - store_test_results:
@@ -43,10 +43,10 @@ jobs:
         steps:
             - checkout
             - restore_cache:
-                key: yarn-v1-{{ checksum "yarn.lock" }}-{{ arch }}
+                key: npm-v1-{{ checksum "package-lock.lock" }}-{{ arch }}
             - restore_cache:
                 key: node-v1-{{ checksum "package.json" }}-{{ arch }}
-            - run: yarn install
+            - run: npm install
             - attach_workspace:
                 at: ~/npm-go-textile-dep
             - run:
