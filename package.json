@@ -1,0 +1,75 @@
+{
+  "name": "@textile/npm-go-textile-dep",
+  "version": "0.6.3",
+  "description": "Official Textile binary distribution for Node projects",
+  "main": "dist/index.js",
+  "bin": "dist/bin.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "prepare": "yarn build",
+    "postinstall": "node dist/bin.js",
+    "test": "jest --no-watchman --config jest.config.json",
+    "lint": "npx eslint --fix --ext .mjs,.js,.jsx,.ts,.tsx src && echo 'Lint complete.'",
+    "precommit": "yarn lint && yarn test",
+    "preversion": "yarn precommit",
+    "release": "yarn version --patch",
+    "postversion": "git push --follow-tags"
+  },
+  "engines": {
+    "node": ">= 10.0.0",
+    "npm": ">= 3.0.0",
+    "yarn": "^1.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/textileio/js-textile-go-textile.git"
+  },
+  "bugs": {
+    "url": "https://github.com/textileio/js-textile-go-textile/issues"
+  },
+  "keywords": [
+    "textile",
+    "install",
+    "IPFS",
+    "binary"
+  ],
+  "author": "textile.io",
+  "license": "MIT",
+  "dependencies": {
+    "@octokit/rest": "^16.28.6",
+    "execa": "^2.0.3",
+    "go-ipfs-dep": "^0.4.21",
+    "go-platform": "^1.0.0",
+    "gunzip-maybe": "^1.4.1",
+    "jsonpath": "^1.0.2",
+    "node-fetch": "^2.6.0",
+    "pkg-conf": "^3.1.0",
+    "rimraf": "^2.6.3",
+    "tar-fs": "^2.0.0",
+    "unzip-stream": "^0.3.0"
+  },
+  "devDependencies": {
+    "@types/execa": "^2.0.0",
+    "@types/jest": "^24.0.11",
+    "@types/jsonpath": "^0.2.0",
+    "@types/node": "^12.6.8",
+    "@types/node-fetch": "^2.3.7",
+    "@types/pkg-conf": "^3.0.0",
+    "@types/rimraf": "^2.0.2",
+    "@types/tar-fs": "^1.16.1",
+    "@typescript-eslint/eslint-plugin": "^1.11.0",
+    "@typescript-eslint/parser": "^1.11.0",
+    "eslint": "^6.0.1",
+    "eslint-config-prettier": "^6.0.0",
+    "eslint-plugin-prettier": "^3.1.0",
+    "jest": "^24.8.0",
+    "jest-cli": "^24.5.0",
+    "nodemon": "^1.18.10",
+    "prettier": "^1.18.2",
+    "prettier-eslint": "^8.8.2",
+    "ts-jest": "^24.0.2",
+    "ts-loader": "^5.4.4",
+    "typescript": "^3.5.3"
+  }
+}
