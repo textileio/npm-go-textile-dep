@@ -22,7 +22,7 @@ function packTarball() {
   return tarballName
 }
 
-describe('go-textile package.json version', () => {
+describe.skip('go-textile package.json version', () => {
   afterAll(() => {
     fs.unlinkSync(path.join(__dirname, tarballName))
     rimraf.sync(path.join(__dirname, '__fixture__', 'example', 'node_modules'))
