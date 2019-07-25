@@ -1,5 +1,5 @@
 {
-  "name": "@textile/npm-go-textile-dep",
+  "name": "@textile/go-textile-dep",
   "version": "0.6.3",
   "description": "Official Textile binary distribution for Node projects",
   "main": "dist/index.js",
