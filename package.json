@@ -14,7 +14,7 @@
     "prepare": "npm run build",
     "install": "npm run build && node ./dist/bin.js",
     "test": "jest --no-watchman --config jest.config.json",
-    "lint": "npm run eslint --fix --ext .mjs,.js,.jsx,.ts,.tsx src && echo 'Lint complete.'",
+    "lint": "eslint --fix --ext .mjs,.js,.jsx,.ts,.tsx src && echo 'Lint complete.'",
     "precommit": "npm run lint && npm run test",
     "preversion": "npm run precommit",
     "release": "npm version patch",
