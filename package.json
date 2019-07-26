@@ -27,10 +27,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/textileio/js-textile-go-textile.git"
+    "url": "https://github.com/textileio/npm-go-textile-dep.git"
   },
   "bugs": {
-    "url": "https://github.com/textileio/js-textile-go-textile/issues"
+    "url": "https://github.com/textileio/npm-go-textile-dep/issues"
   },
   "keywords": [
     "textile",
