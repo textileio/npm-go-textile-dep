@@ -11,8 +11,9 @@
   "scripts": {
     "clean": "rimraf ./dist ./binary",
     "build": "tsc",
+    "fetch": "node ./dist/bin.js",
     "prepare": "npm run build",
-    "install": "npm run build && node ./dist/bin.js",
+    "install": "npm run build && npm run fetch",
     "test": "jest --no-watchman --config jest.config.json",
     "lint": "eslint --fix --ext .mjs,.js,.jsx,.ts,.tsx src && echo 'Lint complete.'",
     "precommit": "npm run lint && npm run test",
