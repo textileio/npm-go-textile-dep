@@ -83,6 +83,8 @@ You can also compile the Typescript yourself with:
 yarn build
 ```
 
+If you want to push out a _new_ release, simply run `npm version {path|minor|major}` to run the CI-based release process, `npm` will automatically bump the version, and the CI will fetch the relevant `go-textile` version for testing etc.
+
 ## Maintainer
 
 [Carson Farmer](https://github.com/carsonfarmer)
