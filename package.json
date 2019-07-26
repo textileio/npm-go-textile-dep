@@ -1,6 +1,6 @@
 {
   "name": "@textile/go-textile-dep",
-  "version": "0.6.3",
+  "version": "0.6.4",
   "description": "Official Textile binary distribution for Node projects",
   "main": "dist/index.js",
   "bin": "dist/bin.js",
